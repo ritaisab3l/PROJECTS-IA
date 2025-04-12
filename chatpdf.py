@@ -1,11 +1,13 @@
 import os
 import streamlit as st
 import pdfplumber
+from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain.schema import HumanMessage, SystemMessage, AIMessage
 
-# API Key da Groq
-os.environ["GROQ_API_KEY"] = "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"
+# Carrega variáveis de ambiente do .env
+load_dotenv()
+groq_api_key = os.getenv("GROQ_API_KEY")
 
 # Inicializa LLM
 def configurar_llm():
